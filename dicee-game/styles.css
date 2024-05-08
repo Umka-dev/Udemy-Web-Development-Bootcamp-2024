@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* width: 70%; */
+  width: 90%;
   margin: auto;
   text-align: center;
   align-items: center;
@@ -19,7 +19,7 @@
   padding: 20px 40px;
   font-family: 'Lobster', cursive;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   border-radius: 100px;
   margin-top: 60px;
@@ -60,5 +60,5 @@ footer {
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
