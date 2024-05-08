@@ -1,13 +1,36 @@
 .container {
+  display: flex;
+  flex-direction: column;
   width: 70%;
   margin: auto;
   text-align: center;
+  align-items: center;
 }
 
 .dice {
   text-align: center;
   display: inline-block;
+}
 
+.btn {
+  border: none;
+  color: black;
+  background-color: #ebbc10;
+  padding: 12px 24px;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 60px;
+  box-shadow: 5px 0 #232931;
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  color: #EEEEEE;
+  cursor: pointer;
+  transform: translateY(2px) translateX(2px);
 }
 
 body {
