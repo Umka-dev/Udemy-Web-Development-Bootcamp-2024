@@ -93,6 +93,7 @@ hr {
 
 .hero ul {
   list-style: decimal;
+  text-align: left;
 }
 
 footer {
