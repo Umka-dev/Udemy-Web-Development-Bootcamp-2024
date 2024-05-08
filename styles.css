@@ -96,6 +96,10 @@ hr {
   text-align: left;
 }
 
+.hero ul li {
+  margin-bottom: 1rem;
+}
+
 footer {
   display: flex;
   flex-direction: column;
