@@ -16,12 +16,12 @@
   border: none;
   color: black;
   background-color: #ebbc10;
-  padding: 12px 24px;
+  padding: 20px 40px;
   font-family: 'Lobster', cursive;
   text-align: center;
-  font-size: 24px;
+  font-size: 2rem;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 100px;
   margin-top: 60px;
   box-shadow: 5px 0 #232931;
   transition: all 0.15s ease;
@@ -46,7 +46,7 @@ h1 {
 }
 
 p {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
 }
@@ -60,5 +60,5 @@ footer {
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
-
+  font-size: 1.5rem;
 }
