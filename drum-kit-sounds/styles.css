@@ -3,12 +3,11 @@ body {
   background-color: #283149;
   color: #DBEDF3;
   font-family: sans-serif;
-  margin: 10px auto;
+  margin: 10px;
 }
 
 h1 {
   font-size: 5rem;
-  /* color: #DBEDF3; */
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #DA0463;
 }
@@ -51,7 +50,7 @@ p {
 }
 
 .hint {
-  margin: 0 auto 10% auto;
+  margin: 0 5% 8% 5%;
 }
 
 .game-over {
