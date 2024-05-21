@@ -38,3 +38,6 @@ Temporary Items
 
 # VScode
 .vscode
+
+#Node modules
+**/node_modules/
