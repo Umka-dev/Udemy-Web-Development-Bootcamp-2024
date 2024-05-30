@@ -22,5 +22,14 @@ const notes = [
     title: "Hardware vs. Software",
     content:
       "What's the difference between hardware and software? You can hit your hardware with a hammer, but you can only curse at your software."
+  },
+
+  {
+    key: 5,
+    title: "Arrow Function",
+    content:
+      "An arrow function expression is a compact alternative to a traditional function expression, with some semantic differences and deliberate limitations in usage."
   }
 ];
+
+export default notes;
