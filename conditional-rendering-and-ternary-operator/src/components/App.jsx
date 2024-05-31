@@ -1,20 +1,12 @@
-import React from 'react';
-import Login from './Login';
+import React from "react";
+import Form from "./Form";
 
-var isLoggedIn = false;
-
-const currentTime = new Date(2024, 5, 31, 19).getHours();
-console.log(currentTime);
+var userIsRegistered = true;
 
 function App() {
   return (
-    <div className='container'>
-      {/* Ternary operator */}
-      {/* {isLoggedIn ? <h1>Hello</h1> : <Login />} */}
-      {/* {currentTime > 18 ? <h1>Why are you still working?</h1> : null} */}
-
-      {/* AND operator */}
-      {currentTime > 18 && <h1>Why are you still working?</h1>}
+    <div className="container">
+      <Form isRegistered={userIsRegistered} />
     </div>
   );
 }
