@@ -9,7 +9,11 @@ console.log(currentTime);
 function App() {
   return (
     <div className='container'>
+      {/* Ternary operator */}
       {/* {isLoggedIn ? <h1>Hello</h1> : <Login />} */}
+      {/* {currentTime > 18 ? <h1>Why are you still working?</h1> : null} */}
+
+      {/* AND operator */}
       {currentTime > 18 && <h1>Why are you still working?</h1>}
     </div>
   );
