@@ -1,42 +1,56 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [fName, setFName] = useState('');
-  const [lName, setLName] = useState('');
-  const [headingText, setHeading] = useState('');
+  const [fullName, setFullName] = useState({
+    fName: '',
+    lName: '',
+  });
+
+  // const [headingText, setHeading] = useState("");
 
   function handleClick(event) {
-    // setHeading(name + " " + lastName);
+    setHeading(fullName);
     event.preventDefault();
   }
 
-  function updateFName(event) {
-    const firstName = event.target.value;
-    setFName(firstName);
-  }
+  function handleChange(event) {
+    const newValue = event.target.value;
+    const inputName = event.target.name;
 
-  function updateLName(event) {
-    const lastName = event.target.value;
-    setLName(lastName);
+    setFullName((prevValue) => {
+      if (inputName === 'fName') {
+        return {
+          fName: newValue,
+          lName: prevValue.lName,
+        };
+      } else if (inputName === 'lName') {
+        return {
+          fName: prevValue.fName,
+          lName: newValue,
+        };
+      }
+    });
   }
 
   return (
     <div className='container'>
-      <h1>Hello {fName + ' ' + lName}</h1>
+      <h1>
+        Hello {fullName.fName} {fullName.lName}
+      </h1>
       <form onSubmit={handleClick}>
         <input
-          onChange={updateFName}
+          onChange={handleChange}
           type='text'
           name='fName'
           placeholder='First Name'
-          value={fName}
+          value={fullName.fName}
         />
         <input
-          onChange={updateLName}
+          onChange={handleChange}
           type='text'
           name='lName'
           placeholder='Last Name'
-          value={lName}
+          value={fullName.lName}
         />
         <button type='submit'>Submit</button>
       </form>
