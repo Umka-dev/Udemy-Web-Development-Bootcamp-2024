@@ -4,8 +4,9 @@ function App() {
   const [name, setName] = useState('');
   const [headingText, setHeading] = useState('');
 
-  function handleClick() {
+  function handleClick(event) {
     setHeading(name);
+    event.preventDefault();
   }
 
   function handleChange(event) {
@@ -15,13 +16,15 @@ function App() {
   return (
     <div className='container'>
       <h1>Hello {headingText}</h1>
-      <input
-        onChange={handleChange}
-        type='text'
-        placeholder="What's your name?"
-        value={name}
-      />
-      <button onClick={handleClick}>Submit</button>
+      <form onSubmit={handleClick}>
+        <input
+          onChange={handleChange}
+          type='text'
+          placeholder="What's your name?"
+          value={name}
+        />
+        <button type='submit'>Submit</button>
+      </form>
     </div>
   );
 }
