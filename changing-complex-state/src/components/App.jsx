@@ -6,27 +6,19 @@ function App() {
     lName: '',
   });
 
-  // const [headingText, setHeading] = useState("");
-
-  function handleClick(event) {
-    setHeading(fullName);
-    event.preventDefault();
-  }
-
   function handleChange(event) {
-    const newValue = event.target.value;
-    const inputName = event.target.name;
+    const { value, name } = event.target;
 
     setFullName((prevValue) => {
-      if (inputName === 'fName') {
+      if (name === 'fName') {
         return {
-          fName: newValue,
+          fName: value,
           lName: prevValue.lName,
         };
-      } else if (inputName === 'lName') {
+      } else if (name === 'lName') {
         return {
           fName: prevValue.fName,
-          lName: newValue,
+          lname: value,
         };
       }
     });
@@ -37,22 +29,20 @@ function App() {
       <h1>
         Hello {fullName.fName} {fullName.lName}
       </h1>
-      <form onSubmit={handleClick}>
+      <form>
         <input
-          onChange={handleChange}
-          type='text'
           name='fName'
+          onChange={handleChange}
           placeholder='First Name'
           value={fullName.fName}
         />
         <input
-          onChange={handleChange}
-          type='text'
           name='lName'
+          onChange={handleChange}
           placeholder='Last Name'
           value={fullName.lName}
         />
-        <button type='submit'>Submit</button>
+        <button>Submit</button>
       </form>
     </div>
   );
