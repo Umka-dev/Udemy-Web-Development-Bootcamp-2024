@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [fName, setFName] = useState('');
+  const [lName, setLName] = useState('');
   const [headingText, setHeading] = useState('');
 
   function handleClick(event) {
@@ -10,31 +10,33 @@ function App() {
     event.preventDefault();
   }
 
-  function handleChangeFN(event) {
-    setName(event.target.value);
+  function updateFName(event) {
+    const firstName = event.target.value;
+    setFName(firstName);
   }
 
-  function handleChangeLN(event) {
-    setLastName(event.target.value);
+  function updateLName(event) {
+    const lastName = event.target.value;
+    setLName(lastName);
   }
 
   return (
     <div className='container'>
-      <h1>Hello {name + ' ' + lastName}</h1>
+      <h1>Hello {fName + ' ' + lName}</h1>
       <form onSubmit={handleClick}>
         <input
-          onChange={handleChangeFN}
+          onChange={updateFName}
           type='text'
           name='fName'
           placeholder='First Name'
-          value={name}
+          value={fName}
         />
         <input
-          onChange={handleChangeLN}
+          onChange={updateLName}
           type='text'
           name='lName'
           placeholder='Last Name'
-          value={lastName}
+          value={lName}
         />
         <button type='submit'>Submit</button>
       </form>
