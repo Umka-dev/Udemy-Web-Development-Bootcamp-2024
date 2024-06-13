@@ -1,7 +1,7 @@
 {
   "name": "es6-spread-operator-practice",
   "version": "1.0.0",
-  "homepage": "https://umka-dev.github.io/Udemy-Web-Development-Bootcamp-2024/spread-operator-practice-todo-list/",
+  "homepage": "https://umka-dev.github.io/Udemy-Web-Development-Bootcamp-2024/spread-operator-practice-todo-list/build/index.html",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
