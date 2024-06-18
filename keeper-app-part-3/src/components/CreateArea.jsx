@@ -1,58 +1,71 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import AddIcon from '../../node_modules/@mui/icons-material/Add';
+import { Fab } from '../../node_modules/@mui/material';
+import { Zoom } from '../../node_modules/@mui/material';
 
 function CreateArea(props) {
   const [note, setNote] = useState({
-    id: "",
-    title: "",
-    content: "",
+    title: '',
+    content: '',
   });
+  const [isClicked, setClicked] = useState(false);
 
   function handleChange(event) {
-    const { value, name } = event.target;
-
+    const { name, value } = event.target;
     setNote((prevNote) => {
       return {
         ...prevNote,
-        id: prevNote.id || uuidv4(),
         [name]: value,
       };
     });
   }
 
+  function handleClick() {
+    setClicked(true);
+  }
+
   function submitNote(event) {
     event.preventDefault();
     if (
-      note.title.trim() === ""
-      // || note.content.trim() === ""
+      // note.title.trim() === "" ||
+      note.content.trim() === ''
     ) {
       return;
     }
     props.onAdd(note);
     setNote({
-      id: "",
-      title: "",
-      content: "",
+      title: '',
+      content: '',
     });
+    event.preventDefault();
   }
 
   return (
     <div>
-      <form>
-        <input
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-          value={note.title}
-        />
+      <form className='create-note'>
+        {isClicked && (
+          <input
+            name='title'
+            onChange={handleChange}
+            value={note.title}
+            placeholder='Title'
+          />
+        )}
+
         <textarea
-          name="content"
-          placeholder="Take a note..."
+          name='content'
           onChange={handleChange}
+          onClick={handleClick}
           value={note.content}
-          rows="3"
+          placeholder='Take a note...'
+          rows={isClicked ? 3 : 1}
         />
-        <button onClick={submitNote}>Add</button>
+        <Zoom in={isClicked}>
+          <Fab onClick={submitNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
       </form>
     </div>
   );
