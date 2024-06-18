@@ -1,5 +1,5 @@
-import React from 'react';
-import TipsAndUpdates from '../../node_modules/@mui/icons-material/TipsAndUpdates';
+import React from "react";
+import TipsAndUpdates from "@mui/icons-material/TipsAndUpdates";
 
 function Header() {
   return (

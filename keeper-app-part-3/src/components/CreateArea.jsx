@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import AddIcon from '../../node_modules/@mui/icons-material/Add';
-import { Fab } from '../../node_modules/@mui/material';
-import { Zoom } from '../../node_modules/@mui/material';
+import React, { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import { Fab } from "@mui/material";
+import { Zoom } from "@mui/material";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
-    title: '',
-    content: '',
+    title: "",
+    content: "",
   });
   const [isClicked, setClicked] = useState(false);
 
@@ -29,36 +28,36 @@ function CreateArea(props) {
     event.preventDefault();
     if (
       // note.title.trim() === "" ||
-      note.content.trim() === ''
+      note.content.trim() === ""
     ) {
       return;
     }
     props.onAdd(note);
     setNote({
-      title: '',
-      content: '',
+      title: "",
+      content: "",
     });
     event.preventDefault();
   }
 
   return (
     <div>
-      <form className='create-note'>
+      <form className="create-note">
         {isClicked && (
           <input
-            name='title'
+            name="title"
             onChange={handleChange}
             value={note.title}
-            placeholder='Title'
+            placeholder="Title"
           />
         )}
 
         <textarea
-          name='content'
+          name="content"
           onChange={handleChange}
           onClick={handleClick}
           value={note.content}
-          placeholder='Take a note...'
+          placeholder="Take a note..."
           rows={isClicked ? 3 : 1}
         />
         <Zoom in={isClicked}>
